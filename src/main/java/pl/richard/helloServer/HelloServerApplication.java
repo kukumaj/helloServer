@@ -19,10 +19,6 @@ public class HelloServerApplication {
         HttpHandler httpHandler = RouterFunctions.toHttpHandler(route);
         HttpServer server = HttpServer.create("localhost", 8080);
         server.startAndAwait(new ReactorHttpHandlerAdapter(httpHandler));
-//        HttpHandler handler = RouterFunctions.toHttpHandler(route);
-//        ReactorHttpHandlerAdapter adapter = new ReactorHttpHandlerAdapter(handler);
-//        HttpServer server = HttpServer.create("localhost", 8080);
-//        server.startAndAwait(adapter);
     }
 
 }
