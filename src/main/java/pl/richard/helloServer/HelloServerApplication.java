@@ -16,13 +16,13 @@ public class HelloServerApplication {
     public static void main(String[] args) {
         RouterFunction route = route(GET("/"),
                 request -> ServerResponse.ok().body(fromValue("Hello")));
-//        HttpHandler httpHandler = RouterFunctions.toHttpHandler(route);
-//        HttpServer server = HttpServer.create("localhost", 8080);
-//        server.startAndAwait(new ReactorHttpHandlerAdapter(httpHandler));
-        HttpHandler handler = RouterFunctions.toHttpHandler(route);
-        ReactorHttpHandlerAdapter adapter = new ReactorHttpHandlerAdapter(handler);
+        HttpHandler httpHandler = RouterFunctions.toHttpHandler(route);
         HttpServer server = HttpServer.create("localhost", 8080);
-        ser9ver.startAndAwait(adapter);
+        server.startAndAwait(new ReactorHttpHandlerAdapter(httpHandler));
+//        HttpHandler handler = RouterFunctions.toHttpHandler(route);
+//        ReactorHttpHandlerAdapter adapter = new ReactorHttpHandlerAdapter(handler);
+//        HttpServer server = HttpServer.create("localhost", 8080);
+//        server.startAndAwait(adapter);
     }
 
 }
